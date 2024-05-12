@@ -22,6 +22,13 @@ export function Items() {
         fetchData();
     }, []);
 
+    if (!session) {
+        return <div className="text-center justify-center text-lg">
+            <b>Welcome to Birthday Reminder</b>
+            <div>Login to continue!</div>
+        </div>
+    }
+
     return (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {(items || []).map((item, idx) => <Item {...item} key={idx}/>)}
