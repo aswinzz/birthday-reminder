@@ -20,7 +20,7 @@ export function Items() {
             }
         }
         fetchData();
-    }, []);
+    }, [session]);
 
     if (!session) {
         return <div className="text-center justify-center text-lg">
